@@ -1,0 +1,225 @@
+/*Moderate violet: hsl(263, 55%, 52%)
+Very dark grayish blue: hsl(217, 19%, 35%)
+Very dark blackish blue: hsl(219, 29%, 14%)
+White: hsl(0, 0%, 100%)*/
+:root{
+    /*### Primarios ###~*/
+    --very-dark-grayis-blue: rgb(72, 85, 106);
+    --very-dark-blackish-blue: rgb(25, 33, 46);
+    --white:  rgb(255, 255, 255);
+    --moderate-violet: rgb(117, 65, 200);
+
+    /*### Neutrales ###*/
+
+    --light-gray: rgb(207, 207, 207);
+    --light-grayish-blue: rgb(236, 242, 248);
+
+    /*Note for text colors:
+
+    1. "Graduado verificado" tiene el mismo color que el nombre de la persona con un 50 % de opacidad
+    
+    2. Los párrafos de revisión dentro de las citas también tienen el mismo color, pero tienen una opacidad del 70 %.*/
+    --alpha-moderate-violet: rgb(207, 207, 207, 50%);
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+body{
+    font-size: 13px;
+    background-color: var(--light-gray);
+}
+.contenedor{
+    width: 90%;
+    
+    margin: 0 auto;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5,max-content);
+    grid-template-areas: 
+    "articulo1"
+    "articulo2"
+    "articulo3"
+    "articulo4"
+    "articulo5";
+    gap: 1em;
+    padding: 60px 0;
+}
+/*.main{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5,max-content);
+    grid-template-areas: 
+
+    "articulo1"
+    "articulo2"
+    "articulo3"
+    "articulo4"
+    "articulo5";
+    grid-gap: 20px;
+}*/
+.article-one{
+    width: 100%;
+    background-color: var(--moderate-violet);
+    border-radius: 10px;
+    grid-area: articulo1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /*margin-top: 20px;*/
+
+
+}
+.__article-one-image{
+    max-width: 115px;
+    height: 115px;
+    position: absolute;
+    /*right: 35px;*/
+    right: 5%;
+    
+    
+}
+.__article-one-header{
+    display: inherit;
+    /*margin: 2rem 2rem 0 2rem;*/
+    margin: 30px 30px 10px 30px;
+    align-items: center;
+}
+.image{
+    border: 2px solid var(--alpha-moderate-violet);
+    border-radius: 50%;
+    width: 3vh;
+   
+}
+.__article-one-header-parrafos{
+    margin-left: 1em;
+    
+}
+.__article-one-parrafos{
+    width: 80%;
+    margin: 10px auto;
+    z-index: 5;
+}
+.__article-one-nombre{
+    color: var(--white);
+
+}
+.__article-one-p{
+    color:var(--alpha-moderate-violet)
+}
+
+.__article-p-superior{
+    
+    color: var(--white);
+    font-size: 1.3rem;
+    
+    
+}
+.__article-p-inferior{
+   color: var(--alpha-moderate-violet);
+   margin: 20px auto;
+   letter-spacing: 0.5px;
+   
+}
+
+.article-two{
+    width: 100%;
+    background-color: var(--very-dark-grayis-blue);
+    border-radius: 10px;
+    grid-area: articulo2;
+    display: flex;
+    flex-direction: column;
+    /*margin-top: 20px;*/
+}
+.__article-two-parrafos{
+    margin: 10px auto;
+    width: 80%;
+}
+.article-tres{
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 10px;
+    grid-area: articulo3;
+    display: flex;
+    flex-direction: column;
+    
+    /*margin-top: 20px;*/
+}
+.__article-tres-nombre{
+    color: var(--very-dark-blackish-blue);
+}
+.__article-tres-p{
+    color: var(--very-dark-grayis-blue);
+}
+.__article-tres-parrafos{
+    width: 80%;
+    margin: 10px auto;
+}
+.__article-tres-p-superior{
+    color: var(--very-dark-blackish-blue);
+    font-size: 1.3rem;
+}
+.__article-tres-p-inferior{
+    color: var(--very-dark-grayis-blue);
+    margin: 20px auto;
+    letter-spacing: 0.5px;
+}
+.article-four{
+    width: 100%;
+    background-color: var(--very-dark-blackish-blue);
+    border-radius: 10px;
+    grid-area: articulo4;
+    display: flex;
+    flex-direction: column;
+    /*margin-top: 20px;*/
+}
+.__article-four-parrafos{
+    margin: 10px auto;
+    width: 80%;
+}
+.article-five{
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 10px;
+    grid-area: articulo5;
+    display: flex;
+    flex-direction: column;
+    /*margin-top: 20px;*/
+}
+.__article-five-parrafos{
+    margin: 10px auto;
+    width: 80%;
+}
+
+@media (min-width: 600px) {
+
+    .contenedor{
+        width: 85%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        
+        grid-template-areas: 
+
+        'articulo1 articulo1 articulo2 articulo5'
+        'articulo3 articulo4 articulo4 articulo5';
+        gap: 2em;
+    }
+    .__article-one-image{
+        right: 16%;
+    }
+    .image{
+        width: 5vh;    
+    }
+    .__article-one-parrafos{
+        width: 90%;
+    }
+    .__article-four-parrafos{
+        width: 90%;
+    }
+
+}
